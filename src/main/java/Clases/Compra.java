@@ -9,5 +9,35 @@ package Clases;
  * @author Usuario
  */
 public class Compra {
-    
+
+    private Carrito carrito;
+    private int numeroCompra;
+
+    public Carrito getCarrito() {
+        return carrito;
+    }
+
+    public void setCarrito(Carrito carrito) {
+        this.carrito = carrito;
+    }
+
+    public int getNumeroCompra() {
+        return numeroCompra;
+    }
+
+    public void setNumeroCompra(int numeroCompra) {
+        this.numeroCompra = numeroCompra;
+    }
+
+    public Compra() {
+    }
+
+    public Compra(Carrito carrito, int numeroCompra) {
+        this.carrito = carrito;
+        this.numeroCompra = numeroCompra;
+    }
+
+    public void ImprimirFactura() {
+
+    }
 }

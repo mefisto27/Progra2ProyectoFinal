@@ -4,10 +4,29 @@
  */
 package Clases;
 
+import java.util.List;
+
 /**
  *
  * @author Usuario
  */
 public class HistoricoCompras {
-    
+
+    private List<Compra> compra;
+
+    public List<Compra> getCompra() {
+        return compra;
+    }
+
+    public void setCompra(List<Compra> compra) {
+        this.compra = compra;
+    }
+
+    public HistoricoCompras() {
+    }
+
+    public HistoricoCompras(List<Compra> compra) {
+        this.compra = compra;
+    }
+
 }

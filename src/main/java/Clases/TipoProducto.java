@@ -9,5 +9,32 @@ package Clases;
  * @author Usuario
  */
 public class TipoProducto {
-    
+
+    private String categoria;
+    private String tipo;
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public TipoProducto() {
+    }
+
+    public TipoProducto(String categoria, String tipo) {
+        this.categoria = categoria;
+        this.tipo = tipo;
+    }
+
 }
