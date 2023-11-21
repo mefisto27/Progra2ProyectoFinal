@@ -3,6 +3,8 @@
  */
 package com.mycompany.proyectoprogra2;
 
+import Clases.Administrador;
+
 /**
  *
  * @author Usuario
@@ -10,6 +12,8 @@ package com.mycompany.proyectoprogra2;
 public class ProyectoProgra2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+       Administrador admin = new Administrador("Gerente", "Admin Nombre", "Admin Apellidos", "ID123" , "admin@correo.com", 123456789);
+       //Prueba de la funcion agregar usuarios
+        admin.Agregar();
     }
 }
