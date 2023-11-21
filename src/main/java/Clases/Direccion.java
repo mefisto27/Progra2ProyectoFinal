@@ -4,6 +4,8 @@
  */
 package Clases;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Usuario
@@ -56,7 +58,20 @@ public class Direccion {
         this.codigoPostal = codigoPostal;
         this.pais = pais;
     }
+public void AgregarDireccion() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingrese la calle: ");
+        this.calle = scanner.nextLine();
 
+        System.out.print("Ingrese la ciudad: ");
+        this.ciudad = scanner.nextLine();
+
+        System.out.print("Ingrese el código postal: ");
+        this.codigoPostal = scanner.nextLine();
+
+        System.out.print("Ingrese el país: ");
+        this.pais = scanner.nextLine();
+}
     @Override
     public String toString() {
         return "Direccion{" + "calle=" + calle + ", ciudad=" + ciudad + ", codigoPostal=" + codigoPostal + ", pais=" + pais + '}';
