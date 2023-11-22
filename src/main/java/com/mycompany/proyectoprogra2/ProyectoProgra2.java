@@ -20,7 +20,7 @@ public class ProyectoProgra2 {
         Administrador admin = new Administrador("Gerente", "Admin Nombre", "Admin Apellidos", "ID123", "admin@correo.com", 123456789);
 
         // Lista de usuarios
-        List<Usuario> clientes = new ArrayList<>();
+       List<Usuario> usuarios = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
         int opcion;
@@ -39,16 +39,16 @@ public class ProyectoProgra2 {
 
             switch (opcion) {
                 case 1:
-                    admin.Agregar(clientes);
+                  admin.AgregarUsuario(usuarios);
                     break;
                 case 2:
-                    admin.Eliminar(clientes);
+                       admin.Eliminar(usuarios);
                     break;
                 case 3:
-                    admin.Editar(clientes);
+                    admin.Editar(usuarios);
                     break;
                 case 4:
-                    admin.imprimirLista(clientes);
+                    admin.imprimirLista(usuarios);
                     break;
                 case 5:
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
