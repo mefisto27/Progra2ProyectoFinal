@@ -9,24 +9,35 @@ package Clases;
  * @author Usuario
  */
 public class Usuario {
-    
+
     private String nombre;
     private String apellidos;
     private String cedula;
     private Direccion direccion;
     private String correo;
     private int numeroTelefonico;
+    private String tipoUsuario;
 
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellidos, String cedula, Direccion direccion, String correo, int numeroTelefonico) {
+    public Usuario(String nombre, String apellidos, String cedula, Direccion direccion, String correo, int numeroTelefonico, String tipoUsuario) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.cedula = cedula;
         this.direccion = direccion;
         this.correo = correo;
         this.numeroTelefonico = numeroTelefonico;
+       this.tipoUsuario = tipoUsuario;
+    }
+
+    public Usuario(String nombre, String apellidos, String cedula, String correo, int numeroTelefonico) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.cedula = cedula;
+        this.correo = correo;
+        this.numeroTelefonico = numeroTelefonico;
+      
     }
 
     public String getNombre() {
@@ -76,10 +87,20 @@ public class Usuario {
     public void setNumeroTelefonico(int numeroTelefonico) {
         this.numeroTelefonico = numeroTelefonico;
     }
-    
-    
-    
-    /**Todavia no se va a añadir el to String hasta estar seguros 
-     * que no se van a agregar más atributos a la clase Cliente*/
 
+    public void CarritoCompras() {
+
+    }
+
+    public void RevisarHistorico() {
+
+    }
+
+    public void Comprar() {
+
+    }
+    /**
+     * Todavia no se va a añadir el to String hasta estar seguros que no se van
+     * a agregar más atributos a la clase Cliente
+     */
 }

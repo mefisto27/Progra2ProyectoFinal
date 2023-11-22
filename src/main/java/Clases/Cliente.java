@@ -8,14 +8,16 @@ package Clases;
  *
  * @author Usuario
  */
-public class Cliente extends Usuario{
+public class Cliente extends Usuario {
 
     public Cliente() {
     }
 
-    public Cliente(String nombre, String apellidos, String cedula, Direccion direccion, String correo, int numeroTelefonico) {
-        super(nombre, apellidos, cedula, direccion, correo, numeroTelefonico);
+    public Cliente(String nombre, String apellidos, String cedula, Direccion direccion, String correo, int numeroTelefonico, String tipoUsuario) {
+        super(nombre, apellidos, cedula, direccion, correo, numeroTelefonico, tipoUsuario);
     }
-     /**Todavia no se va a añadir el to String hasta estar seguros 
-     * que no se van a agregar más atributos a la clase Cliente*/
+    /**
+     * Todavia no se va a añadir el to String hasta estar seguros que no se van
+     * a agregar más atributos a la clase Cliente
+     */
 }
