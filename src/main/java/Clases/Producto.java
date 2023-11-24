@@ -10,17 +10,17 @@ package Clases;
  */
 public class Producto {
 
-    private TipoProducto tipoProducto;
+    private String tipoProducto;
     private String nombre;
     private String marca;
     private int idProducto;
     private int cantidadDisponible;
 
-    public TipoProducto getTipoProducto() {
+    public String getTipoProducto() {
         return tipoProducto;
     }
 
-    public void setTipoProducto(TipoProducto tipoProducto) {
+    public void setTipoProducto(String tipoProducto) {
         this.tipoProducto = tipoProducto;
     }
 
@@ -59,7 +59,7 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(TipoProducto tipoProducto, String nombre, String marca, int idProducto, int cantidadDisponible) {
+    public Producto(String tipoProducto, String nombre, String marca, int idProducto, int cantidadDisponible) {
         this.tipoProducto = tipoProducto;
         this.nombre = nombre;
         this.marca = marca;
