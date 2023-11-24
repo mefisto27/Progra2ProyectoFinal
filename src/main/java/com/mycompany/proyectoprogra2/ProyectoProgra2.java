@@ -4,6 +4,7 @@
 package com.mycompany.proyectoprogra2;
 
 import Clases.Administrador;
+import Clases.Inventario;
 import Clases.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,12 +20,15 @@ public class ProyectoProgra2 {
     public static void main(String[] args) {
         Administrador admin = new Administrador("Gerente", "Admin Nombre", "Admin Apellidos", "ID123", "admin@correo.com", 123456789);
 
-        // Lista de usuarios
+       
        List<Usuario> usuarios = new ArrayList<>();
 
         Scanner scanner = new Scanner(System.in);
         int opcion;
+  Inventario inventario = new Inventario();
 
+    
+    inventario.MostrarInventario();
         do {
             System.out.println("\nMenú:");
             System.out.println("1. Agregar Usuario");
@@ -35,7 +39,7 @@ public class ProyectoProgra2 {
             System.out.print("Ingrese la opción: ");
 
             opcion = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea después de nextInt()
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
