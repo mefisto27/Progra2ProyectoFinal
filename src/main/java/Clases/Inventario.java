@@ -25,15 +25,13 @@ public Inventario() {
         // Llamar al método para inicializar el inventario
         InicializarInventario();
     }
+
+
+
+
+//poner constructor vacio
     public void setProductos(List<Producto> productos) {
         this.productos = productos;
-    }
-
- 
-
-    public Inventario(List<Producto> productos) {
-        this.productos = productos;
-         InicializarInventario();
     }
 
     public void AgregarProducto(Producto producto) {
