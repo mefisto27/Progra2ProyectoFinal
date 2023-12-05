@@ -13,7 +13,7 @@ import java.util.List;
 public class Carrito {
 
     private int idCarrito;
-    private Usuario usuario;
+    private Usuarios usuario;
     private List<Producto> carrito;
 
     public int getIdCarrito() {
@@ -24,11 +24,11 @@ public class Carrito {
         this.idCarrito = idCarrito;
     }
 
-    public Usuario getUsuario() {
+    public Usuarios getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(Usuario usuario) {
+    public void setUsuario(Usuarios usuario) {
         this.usuario = usuario;
     }
 
@@ -43,7 +43,7 @@ public class Carrito {
     public Carrito() {
     }
 
-    public Carrito(int idCarrito, Usuario usuario, List<Producto> carrito) {
+    public Carrito(int idCarrito, Usuarios usuario, List<Producto> carrito) {
         this.idCarrito = idCarrito;
         this.usuario = usuario;
         this.carrito = carrito;

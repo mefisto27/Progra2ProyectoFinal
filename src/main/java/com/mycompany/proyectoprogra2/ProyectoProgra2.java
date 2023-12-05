@@ -3,63 +3,16 @@
  */
 package com.mycompany.proyectoprogra2;
 
-import Clases.Administrador;
-import Clases.Inventario;
-import Clases.Usuario;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import Clases.*;
+import java.util.*;
 
 /**
  *
  * @author Usuario
  */
-
 public class ProyectoProgra2 {
 
     public static void main(String[] args) {
-        Administrador admin = new Administrador("Gerente", "Admin Nombre", "Admin Apellidos", "ID123", "admin@correo.com", 123456789);
 
-       
-       List<Usuario> usuarios = new ArrayList<>();
-
-        Scanner scanner = new Scanner(System.in);
-        int opcion;
-  Inventario inventario = new Inventario();
-
-    
-    inventario.MostrarInventario();
-        do {
-            System.out.println("\nMenú:");
-            System.out.println("1. Agregar Usuario");
-            System.out.println("2. Eliminar Usuario");
-            System.out.println("3. Editar Usuario");
-            System.out.println("4. Ver lista de Usuarios");
-             System.out.println("5. Salir");
-            System.out.print("Ingrese la opción: ");
-
-            opcion = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (opcion) {
-                case 1:
-                  admin.AgregarUsuario(usuarios);
-                    break;
-                case 2:
-                       admin.Eliminar(usuarios);
-                    break;
-                case 3:
-                    admin.Editar(usuarios);
-                    break;
-                case 4:
-                    admin.imprimirLista(usuarios);
-                    break;
-                case 5:
-                    System.out.println("Saliendo del programa. ¡Hasta luego!");
-                default:
-                    System.out.println("Opción no válida. Intente de nuevo.");
-            }
-
-        } while (opcion != 5);
     }
 }
