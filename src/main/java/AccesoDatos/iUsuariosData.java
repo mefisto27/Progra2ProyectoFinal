@@ -14,13 +14,15 @@ import java.util.List;
  */
 public interface iUsuariosData {
 
-    List<Usuarios> ConsultarUsuarios() throws UsuarioExcepcion, Exception;
+    List<Usuario> ConsultarUsuarios() throws UsuarioExcepcion, Exception;
 
-    Usuarios Cosultar(String usuario) throws UsuarioExcepcion, Exception;
+    Usuario Consultar(String cedula) throws UsuarioExcepcion, Exception;
 
-    String Insertar(Usuarios nombre) throws UsuarioExcepcion, Exception;
+    String Insertar(Usuario usuario) throws UsuarioExcepcion, Exception;
 
-    boolean Actualizar(Usuarios nombre) throws UsuarioExcepcion, Exception;
+    boolean Actualizar(Usuario usuario) throws UsuarioExcepcion, Exception;
 
-    void Eliminar(String usuario) throws UsuarioExcepcion, Exception;
+    void Eliminar(String cedula) throws UsuarioExcepcion, Exception;
+    
+     boolean Login(Usuario usuario) throws UsuarioExcepcion, Exception;
 }

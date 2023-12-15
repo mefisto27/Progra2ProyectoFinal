@@ -5,7 +5,7 @@
 package Negocio;
 
 import AccesoDatos.*;
-import Clases.Usuarios;
+import Clases.Usuario;
 import Clases.Excepciones.UsuarioExcepcion;
 import java.util.List;
 
@@ -14,14 +14,25 @@ import java.util.List;
  * @author Usuario
  */
 public class UsuariosNegocio {
-
     private final iUsuariosData usuariosData;
 
     public UsuariosNegocio() {
-        usuariosData = new UsuariosData();
+        usuariosData = new UsuarioData();
     }
 
-    public List<Usuarios> ConsultarUsuarios() throws UsuarioExcepcion, Exception {
+     public List<Usuario> ConsultarUsuarios() throws UsuarioExcepcion, Exception {
         return usuariosData.ConsultarUsuarios();
     }
+    public String Insertar(Usuario usuario) throws UsuarioExcepcion, Exception {
+       return usuariosData.Insertar(usuario);
+    }
+     public Boolean Actualizar(Usuario usuario) throws UsuarioExcepcion, Exception {
+       return usuariosData.Actualizar(usuario);
+    }
+      public void Eliminar(String usuario) throws UsuarioExcepcion, Exception {
+       usuariosData.Eliminar(usuario);
+    } 
+      public boolean Login(Usuario usuario) throws UsuarioExcepcion, Exception{
+          return usuariosData.Login(usuario);
+      }
 }

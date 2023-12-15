@@ -8,7 +8,7 @@ package Clases;
  *
  * @author Usuario
  */
-public class Usuarios {
+public class Usuario {
 
     private String nombre;
     private String apellidos;
@@ -83,10 +83,10 @@ public class Usuarios {
         this.tipoUsuario = tipoUsuario;
     }
 
-    public Usuarios() {
+    public Usuario() {
     }
 
-    public Usuarios(String nombre, String apellidos, String cedula, String direccion, String correo, int telefono, String contrasenna, String tipoUsuario) {
+    public Usuario(String nombre, String apellidos, String cedula, String direccion, String correo, int telefono, String contrasenna, String tipoUsuario) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.cedula = cedula;
