@@ -97,6 +97,10 @@ public class Usuario {
         this.tipoUsuario = tipoUsuario;
     }
 
-   
+ @Override
+    public String toString() {
+        return "Usuario{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", cedula=" + cedula + ", direccion=" + direccion + ", correo=" + correo + ", telefono=" + telefono + ", contrasenna=" + contrasenna + ", tipoUsuario=" + tipoUsuario + '}';
+    }
+    
 
 }
