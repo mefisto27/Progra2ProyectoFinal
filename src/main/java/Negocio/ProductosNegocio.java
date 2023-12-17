@@ -37,8 +37,8 @@ public class ProductosNegocio {
     public boolean Actualizar(Producto producto) throws ProductoExcepcion, Exception {
 
     }
-
+*/
     public void Eliminar(String idProducto) throws ProductoExcepcion, Exception {
-
-    } */
+     productosData.Eliminar(idProducto);
+    } 
 }

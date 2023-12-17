@@ -72,7 +72,6 @@ public class ProductosData implements iProductosData {
     @Override
     public String Insertar(Producto producto) throws ProductoExcepcion, Exception {
          try {
-//
             if (this.Consultar(producto.getIdProducto()) != null) {
                 String insercion = "INSERT INTO Productos ([TipoProducto],[Nombre],[IdProducto],[CantidadDisponible],[Precio]) VALUES ('" + producto.getTipoProducto() + "','" + 
                         producto.getNombre() + "','" + producto.getIdProducto() + "'," + producto.getCantidadDisponible() + "," + producto.getPrecio() + ")";
@@ -92,7 +91,28 @@ public class ProductosData implements iProductosData {
 
     @Override
     public boolean Actualizar(Producto producto) throws ProductoExcepcion, Exception {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+         boolean resultado = false;
+        try {
+
+            if (this.Consultar(producto.getIdProducto()) != null) {
+                String actualizacion = "UPDATE Productos SET [TipoProducto] = '" + producto.getTipoProducto() 
+                        + "',[Nombre] = '" + producto.getNombre() 
+                        + "',[Marca] = '" + producto.getMarca() 
+                        + "',[IdProducto] = '" + producto.getIdProducto()
+                        + "',[CantidadDisponible] = " + producto.getCantidadDisponible()
+                        + ", [Precio] = " + producto.getPrecio()
+                        + "' WHERE Nombre = '" + producto.getNombre() + "'";
+                Statement sql = Conexion.getConexion().createStatement();
+                sql.execute(actualizacion);
+                resultado = true;
+            } else {
+                throw new ProductoExcepcion("El automovil no existe en el sistema");
+            }
+
+        } catch (Exception e) {
+            throw new ProductoExcepcion("El automovil no pudo ser actualizado \n " + e.getMessage());
+        }
+        return true;
     }
 
     @Override

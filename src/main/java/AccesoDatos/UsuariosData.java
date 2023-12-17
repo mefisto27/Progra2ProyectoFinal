@@ -31,7 +31,7 @@ public class UsuariosData implements iUsuariosData {
                 usuario.setCedula(resultado.getString(3));
                 usuario.setDireccion(resultado.getString(4));
                 usuario.setCorreo(resultado.getString(5));
-                usuario.setTelefono(resultado.getInt(6));                
+                usuario.setTelefono(resultado.getInt(6));
                 usuario.setTipoUsuario(resultado.getString(7));
                 listaUsuarios.add(usuario);
             }
@@ -63,7 +63,7 @@ public class UsuariosData implements iUsuariosData {
                 usuario1.setCedula(resultado.getString(3));
                 usuario1.setDireccion(resultado.getString(4));
                 usuario1.setCorreo(resultado.getString(5));
-                usuario1.setTelefono(resultado.getInt(6));               
+                usuario1.setTelefono(resultado.getInt(6));
                 usuario1.setTipoUsuario(resultado.getString(7));
             }
         } catch (Exception e) {
@@ -101,32 +101,43 @@ public class UsuariosData implements iUsuariosData {
 
     public boolean Actualizar(Usuario usuario) throws UsuarioExcepcion, Exception {
         boolean resultado = false;
-        try{
-            if(this.Consultar(usuario.getNombre()) != null){
+        try {
+            if (this.Consultar(usuario.getNombre()) != null) {
                 String actualizacion = "";
-                if(usuario.getContrasenna().isEmpty()){
-                    actualizacion = "UPDATE [dbo].[Usuarios] SET [Nombre] = '" + usuario.getNombre() + "',[TipoUsuario] = '" + usuario.getTipoUsuario() + "' WHERE Usuario = '" 
-                            + usuario.getNombre()+ "'";
-                }else{
-                    actualizacion = "UPDATE [dbo].[Usuarios] SET [Contrasenna] = '" + usuario.getContrasenna()+ 
-                        "',[Nombre] = '" + usuario.getNombre() + "',[TipoUsuario] = '" + usuario.getTipoUsuario() + "' WHERE Usuario = '" + usuario.getNombre()+ "'";
+                if (usuario.getContrasenna().isEmpty()) {
+                    actualizacion = "UPDATE Usuarios SET  [Nombre] '" + usuario.getNombre()
+                            + "',[Apellido] = '" + usuario.getApellidos()
+                            + "',[Cedula] = '" + usuario.getCedula()
+                            + "',[Direccion] = '" + usuario.getDireccion()
+                            + "', [Correo] = '" + usuario.getCorreo()
+                            + "',[Telefono] = " + usuario.getTelefono()
+                            + "',[TipoUsuario] = '" + usuario.getTipoUsuario()
+                            + "' WHERE Nombre = '" + usuario.getNombre() + "'";
+                } else {
+                    actualizacion = "UPDATE Usuarios SET [Contrasenna] = '" + usuario.getContrasenna()
+                            + "',[Nombre] = '" + usuario.getNombre() + "',[Apellido] = '" + usuario.getApellidos()
+                            + "',[Cedula] = '" + usuario.getCedula()
+                            + "',[Direccion] = '" + usuario.getDireccion()
+                            + "', [Correo] = '" + usuario.getCorreo()
+                            + "',[Telefono] = " + usuario.getTelefono()
+                            + "',[TipoUsuario] = '" + usuario.getTipoUsuario()
+                            + "' WHERE Nombre = '" + usuario.getNombre() + "'";
                 }
                 Statement sql = Conexion.getConexion().createStatement();
-                sql.executeUpdate(actualizacion);                
+                sql.executeUpdate(actualizacion);
                 resultado = true;
-            }else{
+            } else {
                 throw new UsuarioExcepcion("El usuario no existe en el sistema");
             }
-        }catch(Exception e)
-        {
+        } catch (Exception e) {
             throw new UsuarioExcepcion("El usuario no pudo ser actualizado \n" + e.getMessage());
         }
         return resultado;
-        //no esta hecha aun
+       
     }
 
     public void Eliminar(String usuario) throws UsuarioExcepcion, Exception {
-         try {
+        try {
 
             if (this.Consultar(usuario) != null) {
                 String eliminacion = "DELETE Usuarios WHERE usuario = '" + usuario + "'";
