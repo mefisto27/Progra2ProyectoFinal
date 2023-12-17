@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @author Usuario
  */
-public class UsuarioData implements iUsuariosData {
+public class UsuariosData implements iUsuariosData {
 
     public List<Usuario> ConsultarUsuarios() throws UsuarioExcepcion, Exception {
         List<Usuario> listaUsuarios = new ArrayList<>();
@@ -125,11 +125,11 @@ public class UsuarioData implements iUsuariosData {
         //no esta hecha aun
     }
 
-    public void Eliminar(String cedula) throws UsuarioExcepcion, Exception {
+    public void Eliminar(String usuario) throws UsuarioExcepcion, Exception {
          try {
 
-            if (this.Consultar(cedula) != null) {
-                String eliminacion = "DELETE Usuarios WHERE cedula = '" + cedula + "'";
+            if (this.Consultar(usuario) != null) {
+                String eliminacion = "DELETE Usuarios WHERE usuario = '" + usuario + "'";
                 Statement sql = Conexion.getConexion().createStatement();
                 sql.execute(eliminacion);
             } else {
